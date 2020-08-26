@@ -1,4 +1,4 @@
-const { commands } = require('./constants')
+const { commands } = require('./constants');
 let connection;
 /**
  * Setup User Interface
