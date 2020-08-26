@@ -24,7 +24,14 @@ const handleUserInput = (data) => {
     connection.write("Move: down");
   } else if (data.toLowerCase() === 'd') {
     connection.write("Move: right");
+  } else if (data.toLowerCase() === 'd') {
+    connection.write("Move: right");
+  } else if (data.toLowerCase() === 'q') {
+    connection.write("Say: Yummy!");
+  } else if (data.toLowerCase() === 'e') {
+    connection.write("Say: Grrrr!");
   }
+  
 };
 
 module.exports = { setupInput };
