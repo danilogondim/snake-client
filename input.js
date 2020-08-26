@@ -1,3 +1,4 @@
+const { commands } = require('./constants')
 let connection;
 /**
  * Setup User Interface
@@ -16,22 +17,10 @@ const setupInput = (conn) => {
 const handleUserInput = (data) => {
   if (data === '\u0003') {
     process.exit();
-  } else if (data.toLowerCase() === 'w') {
-    connection.write("Move: up");
-  } else if (data.toLowerCase() === 'a') {
-    connection.write("Move: left");
-  } else if (data.toLowerCase() === 's') {
-    connection.write("Move: down");
-  } else if (data.toLowerCase() === 'd') {
-    connection.write("Move: right");
-  } else if (data.toLowerCase() === 'd') {
-    connection.write("Move: right");
-  } else if (data.toLowerCase() === 'q') {
-    connection.write("Say: Yummy!");
-  } else if (data.toLowerCase() === 'e') {
-    connection.write("Say: Grrrr!");
   }
-  
+  if (commands[data.toLowerCase()]) {
+    connection.write(commands[data.toLowerCase()]);
+  }
 };
 
 module.exports = { setupInput };
